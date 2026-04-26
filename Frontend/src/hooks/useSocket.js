@@ -4,7 +4,7 @@ export default function useSocket(onMessage) {
   const ws = useRef(null);
 
   useEffect(() => {
-    ws.current = new WebSocket("ws://assisment-ke6h.onrender.com");
+    ws.current = new WebSocket("wss://assisment-ke6h.onrender.com");
 
     ws.current.onopen = () => {
       console.log("WebSocket connected");
