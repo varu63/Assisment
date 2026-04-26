@@ -1,15 +1,28 @@
-export default function Cell({ cell, onClick, isMine }) {
-  const base = "w-6 h-6 rounded-sm cursor-pointer transition";
+import { getUserColor } from "../utils/getUserColor";
 
-  const color = cell.owner
-    ? isMine
-      ? "bg-green-500"
-      : "bg-blue-500"
-    : "bg-gray-200 hover:bg-gray-300";
+export default function Cell({ cell, onClick, userId }) {
+  const isMine = cell.owner === userId;
+
+  let bg = "bg-gray-200 hover:bg-gray-300";
+
+  if (cell.owner) {
+    const color = getUserColor(cell.owner);
+    bg = "";
+    return (
+      <div
+        className="w-6 h-6 rounded-sm cursor-pointer transition"
+        style={{
+          backgroundColor: color,
+          outline: isMine ? "2px solid black" : "none",
+        }}
+        onClick={() => onClick(cell.cellId)}
+      />
+    );
+  }
 
   return (
     <div
-      className={`${base} ${color}`}
+      className={`w-6 h-6 rounded-sm cursor-pointer transition ${bg}`}
       onClick={() => onClick(cell.cellId)}
     />
   );

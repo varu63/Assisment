@@ -3,7 +3,12 @@ import { fetchCells } from "../services/api";
 import useSocket from "../hooks/useSocket";
 import Grid from "../components/Grid";
 
-const userId = "user_" + Math.floor(Math.random() * 10000);
+ let userId = localStorage.getItem("userId");
+
+  if (!userId) {
+  userId = "user_" + Math.floor(Math.random() * 100000);
+  localStorage.setItem("userId", userId);
+}
 
 export default function Home() {
   const [cells, setCells] = useState([]);
@@ -42,6 +47,12 @@ export default function Home() {
       userId,
     });
   };
+  let userId = localStorage.getItem("userId");
+
+  if (!userId) {
+  userId = "user_" + Math.floor(Math.random() * 100000);
+  localStorage.setItem("userId", userId);
+}
 
   return (
     <div className="min-h-screen bg-gray-100">
