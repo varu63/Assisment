@@ -2,7 +2,7 @@ Real-Time Shared Grid (Pixel Capture)
 A collaborative, real-time shared board where hundreds of users can interact simultaneously. Users can claim blocks on a massive grid, and changes are broadcasted instantly to everyone online using WebSockets.
 
 🚀 Live Demo
-View the project live here: [https://assisment-pi.vercel.app/]
+View the project live here: [https://assisment-pi.vercel.app/]wait a few min because they take a time to start the server
 
 🛠️ Tech Stack
 Frontend: React.js, Tailwind CSS (for clean, responsive UI).
