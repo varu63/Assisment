@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:3000/api/cells";
+const BASE_URL = "https://assisment-ke6h.onrender.com/api/cells";
 
 export const fetchCells = async () => {
   const res = await fetch(BASE_URL);
